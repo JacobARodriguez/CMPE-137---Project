@@ -143,3 +143,4 @@ Do not commit:
 - Local `.env` files
 
 Placeholder configuration belongs in `.env.example`.
+

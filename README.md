@@ -6,7 +6,7 @@ This project is a mobile software engineering application focused on detecting p
 
 The application is designed around a simple idea: a catalyst by itself is not necessarily actionable. The system first detects a potentially meaningful event, then watches market behavior for technical confirmation. A confirmed alert combines both pieces of information so the user can see what happened and why the system considers the market reaction significant.
 
-The initial implementation is intended as a modular monolith with a React/TypeScript frontend, a Python/Flask backend, and PostgreSQL for persistent data. The architecture is intentionally kept manageable for a semester project while leaving clear extension points for later features.
+The mobile application is being developed with Dart and Flutter. The initial architecture is intended to use a Flutter client, a Python/Flask backend, and PostgreSQL for persistent data. The system is organized as a modular monolith so the semester implementation remains manageable while still leaving clear extension points for later features.
 
 ## Development Methodology
 
@@ -118,7 +118,8 @@ The premium and later-roadmap features are not required for the initial semester
 The application is organized as a modular monolith.
 
 ```text
-React / TypeScript Frontend
+Flutter Mobile Application
+        Dart Client
             │
             │ REST API
             ▼
@@ -228,15 +229,19 @@ CMPE-137---Project/
 │   ├── ISSUE_TEMPLATE/
 │   └── pull_request_template.md
 │
-├── frontend/
-│   ├── public/
-│   └── src/
-│       ├── pages/
-│       ├── components/
+├── mobile/
+│   ├── pubspec.yaml
+│   ├── analysis_options.yaml
+│   ├── android/
+│   ├── ios/
+│   ├── test/
+│   └── lib/
+│       ├── main.dart
+│       ├── screens/
+│       ├── widgets/
 │       ├── services/
-│       ├── hooks/
-│       ├── context/
-│       ├── types/
+│       ├── models/
+│       ├── providers/
 │       └── utils/
 │
 ├── backend/
@@ -271,9 +276,9 @@ CMPE-137---Project/
 
 Folders should be added when implementation begins rather than creating unused modules only to match the long-term roadmap.
 
-## Suggested Frontend Screens
+## Suggested Mobile Screens
 
-The initial frontend is expected to grow around the following screens:
+The Flutter application is expected to grow around the following screens:
 
 - Dashboard
 - Watchlist
@@ -284,15 +289,14 @@ The initial frontend is expected to grow around the following screens:
 - Settings
 - Profile
 
-Reusable components may include ticker cards, alert cards, catalyst indicators, technical-confirmation summaries, rule editors, and charts.
+Reusable Flutter widgets may include ticker cards, alert cards, catalyst indicators, technical-confirmation summaries, rule editors, and charts.
 
 ## Technology Stack
 
-### Frontend
+### Mobile Application
 
-- React
-- TypeScript
-- Vite
+- Dart
+- Flutter
 
 ### Backend
 
@@ -311,8 +315,9 @@ Reusable components may include ticker cards, alert cards, catalyst indicators, 
 
 ### Testing
 
+- Flutter test framework for mobile unit and widget testing
 - Pytest for backend testing
-- Frontend unit and integration testing as appropriate
+- Integration testing where appropriate
 
 ## Git Workflow
 
@@ -425,4 +430,4 @@ A smaller complete workflow is preferred over a larger collection of disconnecte
 
 ## Current Status
 
-The repository is currently in the project setup and architecture phase. Initial work should focus on establishing the frontend and backend foundations, development workflow, database structure, and one complete vertical feature path before expanding the number of detectors and technical rules.
+The repository is currently in the project setup and architecture phase. Initial work should focus on establishing the Flutter mobile application and backend foundations, development workflow, database structure, and one complete vertical feature path before expanding the number of detectors and technical rules.

@@ -319,6 +319,15 @@ Reusable Flutter widgets may include ticker cards, alert cards, catalyst indicat
 - Pytest for backend testing
 - Integration testing where appropriate
 
+## Development References
+
+The following official documentation should be used as the primary reference for Dart and Flutter implementation decisions:
+
+- [Dart Language Documentation](https://dart.dev/language)
+- [Flutter Documentation](https://docs.flutter.dev/)
+
+These references cover Dart language features, Flutter widgets, application structure, navigation, platform setup, testing, and deployment guidance.
+
 ## Git Workflow
 
 The `main` branch should represent the latest stable, integrated version of the project.

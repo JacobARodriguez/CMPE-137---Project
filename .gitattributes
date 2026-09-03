@@ -1,0 +1,12 @@
+# Flutter regenerates these files with LF line endings on every `pub get`/build.
+# Git's global core.autocrlf=true otherwise rewrites them as CRLF on checkout,
+# so the size never matches the index and they show as permanently "modified"
+# (with an empty `git diff`), which blocks switching branches. Pin them to LF.
+**/generated_plugin_registrant.cc  eol=lf
+**/generated_plugin_registrant.h   eol=lf
+**/generated_plugins.cmake         eol=lf
+**/GeneratedPluginRegistrant.swift eol=lf
+**/GeneratedPluginRegistrant.java  eol=lf
+**/GeneratedPluginRegistrant.m     eol=lf
+**/GeneratedPluginRegistrant.h     eol=lf
+**/flutter_export_environment.sh   eol=lf

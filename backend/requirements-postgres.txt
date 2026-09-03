@@ -1,0 +1,9 @@
+# PostgreSQL driver. Install only when pointing DATABASE_URL at Postgres:
+#
+#   pip install -r requirements-postgres.txt
+#   DATABASE_URL=postgresql+asyncpg://user:pass@localhost:5432/confluence
+#
+# Kept out of requirements.txt because asyncpg has no wheel for every Python
+# version and falls back to a source build that needs a C compiler. Local
+# development runs on SQLite and does not need this at all.
+asyncpg>=0.30

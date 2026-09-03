@@ -1,0 +1,35 @@
+# Core dependencies. Everything here ships prebuilt wheels for Python 3.11-3.14,
+# so `pip install -r requirements.txt` never needs a compiler.
+#
+# Version floors rather than exact pins: exact pins to older releases break on
+# newer Pythons, because pip falls back to building from source (pydantic-core
+# needs Rust, asyncpg needs a C toolchain). Floors let pip pick a release with a
+# wheel for whatever interpreter you are on. If you need reproducible builds,
+# generate a lockfile with `pip freeze > requirements.lock` per environment.
+
+# --- Web framework -----------------------------------------------------------
+fastapi>=0.115
+uvicorn>=0.34
+pydantic>=2.10
+pydantic-settings>=2.7
+email-validator>=2.2          # required by pydantic EmailStr in app/schemas.py
+
+# --- Persistence -------------------------------------------------------------
+SQLAlchemy>=2.0.36
+aiosqlite>=0.20               # offline/dev driver; no Postgres needed
+# PostgreSQL driver lives in requirements-postgres.txt -- it needs a C compiler
+# on Pythons it has no wheel for, and dev does not need it.
+
+# --- Catalyst-window state / cache ------------------------------------------
+redis>=5.2                    # optional at runtime; in-memory fallback if unset
+
+# --- Auth --------------------------------------------------------------------
+PyJWT>=2.10
+# Password hashing uses stdlib PBKDF2 (app/security.py) -- no passlib/bcrypt.
+
+# --- HTTP client for external data providers --------------------------------
+httpx>=0.28
+
+# --- Tests -------------------------------------------------------------------
+pytest>=8.3
+pytest-asyncio>=0.25

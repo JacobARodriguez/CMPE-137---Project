@@ -1,0 +1,8 @@
+# Optional extras. The pipeline runs fully offline WITHOUT any of these.
+#
+# Claude-backed materiality scoring (MATERIALITY_BACKEND=claude)
+anthropic>=1.0.0
+#
+# Local FinBERT materiality scoring (MATERIALITY_BACKEND=finbert)
+transformers>=4.44.0
+torch>=2.4.0
